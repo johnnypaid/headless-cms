@@ -1,0 +1,11 @@
+#contact {
+    padding: 5%;
+}
+.alert-danger {
+    color: #de1f30 !important;
+    background-color: #f4f5f71f !important;
+    border-color: #f4f5f71f !important;
+}
+.form-control.ng-invalid.ng-touched {
+    border: 2px solid red !important;
+}

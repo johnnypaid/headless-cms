@@ -1,0 +1,5 @@
+
+    <section id="article" *ngFor="let article of articleContent">
+        <h2>{{ article.title}}</h2>
+            {{ article.body | striphtml }}
+    </section>

@@ -1,0 +1,66 @@
+<section>
+  <div class="container">
+    <div class="d-flex flex-row-reverse bd-highlight mb-2">
+      <!-- <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search product" placeholder="Search" aria-label="Search" (keyup.enter)="searchProduct(prodKey.value)"  #prodKey>
+        <button class="btn btn-outline-secondary my-2 my-sm-0" type="button" (click)="searchProduct(prodKey.value)">Search</button>
+      </form> -->
+
+      <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+      <div class="form-row">
+        <div class="form-group col-md-4">
+          <select class="form-control" ngModel name="myselect">
+            <option [value] = 0 selected disabled>...</option>
+            <option [value] = 1>Category 1</option>
+            <option [value] = 2>Category 2</option>
+          </select>
+        </div>
+        <div class="form-group col-md-5">
+          <input type="text" class="form-control" ngModel name="prodKey" placeholder="Keyword search" id="prodKey">
+        </div>
+        <div class="form-group col-md-3">
+          <button type="submit" class="btn btn-secondary">Search</button>
+        </div>
+      </div>
+    </form>
+      <!-- <div class="p-2 bd-highlight">
+        <select (change)="onTableSizeChange($event)" class="custom-select">
+          <option *ngFor="let size of tableSizes" [ngValue]="size">
+            {{ size }}
+          </option>
+        </select>
+      </div> -->
+    </div>
+    <div class="row" id="product">
+      <div class="col-md-4" id="product-inner" *ngFor="let list of mainCont | paginate : {
+        itemsPerPage: tableSize,
+        currentPage: page,
+        totalItems: count
+      };
+      let i = index" [class.active]="i == currentIndex" >
+        <div class="card mb-4 box-shadow" id="cust-product">
+          <img class="card-img-top img-fluid" [src]="list.image_url"alt="Card image cap">
+          <div class="card-body">
+            <h5 class="card-text"> {{ list.name }} </h5>
+            <!-- <p>{{ list.description | striphtml }}</p> -->
+            <div class="d-flex justify-content-between align-items-center">
+              <div class="btn-group">
+                <a class="btn btn-secondary" role="button" [routerLink]="list.view_url">Read More</a>
+              </div>          
+              <small class="text-muted"></small>
+            </div>
+          </div>
+          <!-- <div class="overlay d-flex align-items-center justify-content-center"><a class="btn btn-secondary" role="button" [routerLink]="list.view_url" (click)="test()" data-abc="true">View Details</a></div> -->
+        </div>
+      </div>
+    </div>
+    <div class="d-flex justify-content-center">
+      <pagination-controls 
+        responsive="true" 
+        previousLabel="Prev" 
+        nextLabel="Next" 
+        (pageChange)="onTableDataChange($event)">
+      </pagination-controls>
+    </div>
+  </div>
+</section>

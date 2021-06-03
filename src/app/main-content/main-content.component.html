@@ -1,0 +1,29 @@
+<div id="main-cont" class="d-flex flex-column min-vh-100">
+    <ng-template [ngIf]="pageTitle !== 'Home'">
+        <h1 class="text-center" id="page-title">{{ pageTitle }}</h1>
+    </ng-template>
+    <section *ngFor="let page of pageSections">
+        <ng-template [ngIf]="page.name === 'Carousel'">
+            <app-carousel></app-carousel>
+        </ng-template>
+        <ng-template [ngIf]="page.name === 'Article'">
+            <app-article></app-article>
+        </ng-template>  
+        <ng-template [ngIf]="page.name === 'Contact Us'">
+            <app-contact></app-contact>
+        </ng-template> 
+        <ng-template [ngIf]="page.name === 'Products'">
+            <app-product></app-product>
+        </ng-template>
+        <ng-template [ngIf]="page.name === 'View Product'">
+            <app-product-view></app-product-view>
+        </ng-template> 
+        <ng-template [ngIf]="page.name === 'Product Category'">
+            <app-product-category></app-product-category>
+        </ng-template> 
+        <ng-template [ngIf]="page.name === 'Brands'">
+            <app-brands></app-brands>
+        </ng-template> 
+    </section>
+</div>
+

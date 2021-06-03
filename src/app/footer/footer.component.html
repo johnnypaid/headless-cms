@@ -1,0 +1,32 @@
+<!-- <footer class="footer" [class]="footerClass">
+    <div class="container text-center">
+        <nav class="navbar navbar-expand-lg navbar-light">
+              <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav d-md-flex d-block flex-row mx-md-auto mx-0">
+                  <a 
+                  *ngFor="let url of footerLinks"
+                  class="nav-link" [routerLink]="url.url">{{ url.name }}</a>
+                </div>
+                <div 
+                *ngIf="errSpinner"
+                class="spinner-border text-center"></div>
+              </div>
+          </nav>
+      <span class="text-muted" [innerHTML]="copyRight"></span>
+    </div>
+</footer> -->
+<footer class="footer p-2 m-0" [class]="footerClass">
+    <section class="container-lg text-center">
+        <nav class="navbar navbar-expand-sm navbar-light">
+              <div class="navbar-nav d-md-flex d-block flex-row mx-md-auto mx-0">
+                <a 
+                *ngFor="let url of footerLinks"
+                class="nav-link" [routerLink]="url.url">{{ url.name }}</a>
+              </div>
+              <div 
+              *ngIf="errSpinner"
+              class="spinner-border text-center"></div>
+        </nav>
+        <span class="text-muted" [innerHTML]="copyRight"></span>
+    </section>
+</footer>

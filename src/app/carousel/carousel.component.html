@@ -1,0 +1,16 @@
+<div class="text-center">
+    <ngb-carousel>
+        <ng-template 
+        *ngFor="let caro of caroExtracted" 
+        ngbSlide>
+          <div class="picsum-img-wrapper">
+            <img [src]="caro.image_url" alt="Angular Carousel 1" id="custom-img">
+          </div>
+          <div class="carousel-caption">
+            <h3>{{ caro.title }}</h3>
+            <p>{{ caro.body }}</p>
+          </div>
+        </ng-template>
+    </ngb-carousel>
+
+</div>
